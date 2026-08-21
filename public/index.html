@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A focused word and character counter." />
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="counter-card" aria-labelledby="page-title">
+        <header class="card-header">
+          <p class="eyebrow">Writing tool</p>
+          <h1 id="page-title">Word Counter</h1>
+          <p class="intro">Paste or write below to see the size of your text.</p>
+        </header>
+
+        <label class="input-label" for="text-input">Your text</label>
+        <textarea
+          id="text-input"
+          name="text"
+          rows="10"
+          maxlength="10000"
+          placeholder="Start typing here…"
+          aria-describedby="input-help request-status"
+        ></textarea>
+        <div class="input-footer">
+          <span id="input-help">Up to 10,000 characters</span>
+          <span id="request-status" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="results" aria-live="polite" aria-label="Text statistics">
+          <div class="stat">
+            <span class="stat-label">Words</span>
+            <strong id="word-count" class="stat-value">—</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Characters</span>
+            <strong id="character-count" class="stat-value">—</strong>
+          </div>
+        </div>
+
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+      </section>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
